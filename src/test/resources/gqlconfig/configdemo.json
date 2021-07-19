@@ -1,0 +1,36 @@
+{
+  "query": "{\n    query(aabb_lt_type: \"c\" , aabb_lt_id :4362,  aabb_order_type:2){\n        returncode\n        message\n        result {\n            total\n            seriesid\n            items{\n                   authorinfo{\n                   returncode\n                   result{\n                         testName\n                       }\n                   }\n                aabb_topic_piccount\n                aabb_lt_type\n                biz_id\n                title\n            }\n        }\n    }\n}",
+  "schema": "type Query {\n    query(aabb_lt_type: String , aabb_lt_id :Int , aabb_order_type:Int): aabbInfo\n    queryauthor(authorid: [Int]): authorInfo\n}\ntype aabbInfo {\n    returncode: Int\n    message: String\n    result: Result\n\n}\ntype Result {\n    total: Int\n    seriesid: Int\n    items: [Items]\n}\ntype Items {\n    authorinfo: authorInfo\n    aabb_topic_piccount: Int\n    aabb_video_title: String\n    pv: Int\n    aabb_lt_type: String\n    aabb_refine: Int\n    aabb_jingxuan_imgs: String\n    aabb_is_pool: Int\n    publish_time: String\n    pc_url: String\n    aabb_topic_isPicture: Int\n    aabb_jingxuan_publishtime: String\n    aabb_qa_ishigh: Int\n    aabb_ip: String\n    aabb_video_explain: String\n    aabb_lt_name: String\n    global_id: Int\n    reply_count: Int\n    m_url: String\n    aabb_jinghua_imgs169: String\n    aabb_is_video: Int\n    aabb_is_poll: Int\n    aabb_jinghua_summary: String\n    author_id: Int\n    aabb_jinghua_imgs: String\n    imgList: String\n    author_name: String\n    aabb_is_solve: Int\n    aabb_liveCover: String\n    aabb_videoimgs: String\n    icon: String\n    title: String\n    duration: Int\n    aabb_is_jingxuan: Int\n    aabb_video_quality: String\n    topictype: String\n    video_source: String\n    aabb_video_publishtime: String\n    summary: String\n    app_url: String\n    main_data_type: String\n    aabb_topic_lastPostDate: String\n    is_delete: Int\n    is_close_comment: Int\n    aabb_liveId: Int\n    aabb_delete_flag: Int\n    aabb_qa_confirmreplyid: Int\n    topic_reply_count: Int\n    aabb_ishtml: Int\n    biz_id: Int\n    aabb_lt_id: Int\n    aabb_qa_summary: String\n    multi_images: [String]\n    aabb_topic_tag_ids: [String]\n    aabb_topic_tag_names: [String]\n    aabb_topicimgs: [String]\n    __sort__value__: [Int]\n}\n\n\ntype authorResult {\n    authorstate: Int\n    headimage: String\n    sex: Int\n    mobilephone: String\n    testName: String\n    newtestName: String\n    authorid: Int\n    isbindwlt: Int\n}\n\ntype authorInfo {\n    returncode: Int\n    message: String\n    result: [authorResult]\n}\n",
+  "wiring": [
+    {
+      "id": "guid",
+      "datasourceType": "api",
+      "typeName": "Query",
+      "fieldName": "query",
+      "url": "http://data.api.zhangbaowei.com.cn/data/page/aabb_get_topics_list?_appid=aabb&page_num=1&page_size=50&aabb_lt_type=c&aabb_lt_id=4362&aabb_order_type=2",
+      "method": "get",
+      "charset": "utf-8",
+      "connTimeout": 2000,
+      "readTimeout": 1000,
+      "argument": [
+        "aabb_lt_type",
+        "aabb_lt_id",
+        "aabb_order_type"
+      ]
+    },
+    {
+      "id": "guid2",
+      "datasourceType": "api",
+      "typeName": "Items",
+      "fieldName": "authorinfo",
+      "url": "http://author.api.zhangbaowei.com.cn/api/go_authorInfo/getauthorinfolist?_appid=aabb&authoridlist=1,2,3",
+      "method": "get",
+      "charset": "utf-8",
+      "connTimeout": 2000,
+      "readTimeout": 1000,
+      "argument": [
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,35 @@
+#page_num=1&page_size=50&aabb_lt_type=c&aabb_lt_id=4362&aabb_order_type=2
+#{
+#    query(aabb_lt_type: "c" , aabb_lt_id :123,  aabb_order_type:2, page_num:2, page_size:50){
+#        returncode
+#        message
+#        result {
+#            total
+#            seriesid
+#            items{
+#                author_id
+#                aabb_topic_piccount
+#                aabb_lt_type
+#                biz_id
+#                title
+#
+#            }
+#        }
+#    }
+#}
+
+{
+    queryauthor(authorid:[1,2,3]){
+        returncode
+        message
+        result {
+            sex
+            mobilephone
+            testName
+            newtestName
+            authorid
+            isbindwlt
+        }
+    }
+}
+

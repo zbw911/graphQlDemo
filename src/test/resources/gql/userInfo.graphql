@@ -1,0 +1,20 @@
+#type Query {
+#    queryauthor(authorid: [Int]): authorInfo
+#}
+#
+#type authorResult {
+#    authorstate: Int
+#    headimage: String
+#    sex: Int
+#    mobilephone: String
+#    testName: String
+#    newtestName: String
+#    authorid: Int
+#    isbindwlt: Int
+#}
+#
+#type authorInfo {
+#    returncode: Int
+#    message: String
+#    result: [authorResult]
+#}

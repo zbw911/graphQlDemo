@@ -1,0 +1,92 @@
+type Query {
+    query(aabb_lt_type: String , aabb_lt_id :Int , aabb_order_type:Int): aabbInfo
+    queryauthor(authorid: [Int]): authorInfo
+}
+type aabbInfo {
+    returncode: Int
+    message: String
+    result: Result
+
+}
+type Result {
+    total: Int
+    seriesid: Int
+    items: [Items]
+}
+type Items {
+    authorinfo: authorInfo
+    aabb_topic_piccount: Int
+    aabb_video_title: String
+    pv: Int
+    aabb_lt_type: String
+    aabb_refine: Int
+    aabb_jingxuan_imgs: String
+    aabb_is_pool: Int
+    publish_time: String
+    pc_url: String
+    aabb_topic_isPicture: Int
+    aabb_jingxuan_publishtime: String
+    aabb_qa_ishigh: Int
+    aabb_ip: String
+    aabb_video_explain: String
+    aabb_lt_name: String
+    global_id: Int
+    reply_count: Int
+    m_url: String
+    aabb_jinghua_imgs169: String
+    aabb_is_video: Int
+    aabb_is_poll: Int
+    aabb_jinghua_summary: String
+    author_id: Int
+    aabb_jinghua_imgs: String
+    imgList: String
+    author_name: String
+    aabb_is_solve: Int
+    aabb_liveCover: String
+    aabb_videoimgs: String
+    icon: String
+    title: String
+    duration: Int
+    aabb_is_jingxuan: Int
+    aabb_video_quality: String
+    topictype: String
+    video_source: String
+    aabb_video_publishtime: String
+    summary: String
+    app_url: String
+    main_data_type: String
+    aabb_topic_lastPostDate: String
+    is_delete: Int
+    is_close_comment: Int
+    aabb_liveId: Int
+    aabb_delete_flag: Int
+    aabb_qa_confirmreplyid: Int
+    topic_reply_count: Int
+    aabb_ishtml: Int
+    biz_id: Int
+    aabb_lt_id: Int
+    aabb_qa_summary: String
+    multi_images: [String]
+    aabb_topic_tag_ids: [String]
+    aabb_topic_tag_names: [String]
+    aabb_topicimgs: [String]
+    __sort__value__: [Int]
+}
+
+
+type authorResult {
+    authorstate: Int
+    headimage: String
+    sex: Int
+    mobilephone: String
+    testName: String
+    newtestName: String
+    authorid: Int
+    isbindwlt: Int
+}
+
+type authorInfo {
+    returncode: Int
+    message: String
+    result: [authorResult]
+}
